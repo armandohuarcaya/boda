@@ -1,0 +1,125 @@
+.contenedor {
+    position: relative;
+    display: inline-block;
+    // max-height: 200px; /* Altura máxima deseada */
+    overflow: hidden; /* Ocultar partes de la imagen que se salgan del contenedor */
+    // width: 100%; /* Ancho de la imagen al 100% del contenedor */
+    object-fit: cover; /* Recorta la imagen para llenar el contenedor sin distorsionar */
+}
+
+.imagen {
+    width: 100%; /* Ancho de la imagen al 100% del contenedor */
+    height: 100% !important; /* Altura de la imagen al 100% del contenedor */
+    object-fit: cover; /* Recorta la imagen para llenar el contenedor sin distorsionar */
+}
+
+.texto {
+    position: absolute;
+    // align-items: center;
+    top: 4%; /* Ajusta la posición vertical del texto en relación con la imagen */
+    // left: 50%; /* Ajusta la posición horizontal del texto en relación con la imagen */
+    // background-color: rgba(255, 255, 255, 0.7);
+    // padding: 10px;
+    // position: relative;
+    // text-align: center; /* Centrar horizontalmente */
+    // display: flex;
+    // justify-content: center; /* Centrar horizontalmente (alternativa) */
+    // align-items: center; /* Centrar verticalmente */
+    // width: 100%; /* Ancho del contenedor */
+    // height: 100vh; /* Altura del contenedor */
+}
+.fuente {
+    font-family: "Arial", sans-serif;
+}
+.textoA {
+    font-size: 5vw;
+}
+.textoAA {
+    font-size: 1.5vw;
+}
+.textoB {
+    font-size: 1.7vw;
+}
+.nuestra {
+    font-size: 3vw;
+}
+.year {
+    font-size: 4vw;
+}
+.imagenDos {
+    width: 100%; /* Ancho de la imagen al 100% del contenedor */
+    // height: 60% !important; /* Altura de la imagen al 100% del contenedor */
+    object-fit: cover; /* Recorta la imagen para llenar el contenedor sin distorsionar */
+}
+.contenedor {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente en el eje X */
+    align-items: center; /* Centra verticalmente en el eje Y */
+    width: 100%; /* Opcional: para que el contenedor ocupe todo el ancho disponible */
+    height: 500px; /* Opcional: establece la altura deseada del contenedor */
+  }
+  
+  .contenedor img {
+    max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
+    // max-height: 100%; /* Asegura que la imagen no sea más alta que el contenedor */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    display: block; /* Elimina espacios en blanco no deseados debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente dentro del contenedor */
+  }
+  .imgs {
+    object-fit: cover; /* Recorta la imagen para llenar el contenedor sin distorsionar */
+  }
+  .imgs:hover {
+    transform: scale(1.2);
+}
+
+/* Estilo para el botón flotante */
+.boton-flotante {
+    position: fixed;
+    bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+    right: 20px; /* Ajusta la distancia desde la parte derecha */
+    // background-color: #007bff; /* Color de fondo del botón */
+    // color: #fff; /* Color del texto del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    // border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Quita el subrayado de enlace */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra del botón */
+    z-index: 999; /* Asegura que el botón esté por encima del contenido */
+  }
+
+  .alingVertical {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+ }
+ .letter {
+    font-family: New Century Schoolbook, Times, serif;
+ }
+ .alingVerticalDos {
+    text-align: center; /* Alineación horizontal al centro */
+    display: flex; /* Uso de flexbox para alineación vertical */
+    justify-content: center; /* Alineación vertical al centro */
+    align-items: center; /* Alineación vertical al centro */
+    // height: 100vh; /* Altura del elemento al 100% de la ventana */
+  }
+  /* Estilo base para el icono */
+.mi-icono {
+    font-size: 24px; /* Tamaño del icono */
+    color: #333; /* Color del icono */
+    transition: transform 0.2s; /* Transición suave para la animación */
+    animation: pulse 1s infinite; /* Aplicar la animación infinitamente en 1 segundo */
+  }
+  
+  /* Animación de pulsación */
+  @keyframes pulse {
+    0% {
+      transform: scale(1); /* Tamaño normal */
+    }
+    50% {
+      transform: scale(1.2); /* Aumenta el tamaño al 120% */
+    }
+    100% {
+      transform: scale(1); /* Vuelve al tamaño normal */
+    }
+  }
+  
