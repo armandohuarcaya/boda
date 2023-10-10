@@ -2,7 +2,7 @@
 <div style="background: #3b411e; text-align: center; color: white; margin: 0px; padding: 0px; overflow-x: hidden;">
 
   <div class="contenedor" style="margin: 0px; padding: 0px;">
-    <img class="imagen" [src]="imgesPortada[selectPortada]" width="100%">
+    <img class="imagen" [src]="imgesPortada[selectPortada]" alt="Portada" loading="lazy" width="100%">
     <div class="texto" style="text-align: center; padding: 2vw;">
       <!-- <strong class="fuente" style="font-size: 5vw;font-weight: bold; color: rgb(251, 249, 249);">RAQUEL & CRISTIAN</strong> -->
     </div>
@@ -56,21 +56,21 @@
   <div class="row">
     <div class="col-md-4">
       <div class="contenedor" style="border-radius: 3rem;">
-        <img class="imgs" [src]="imgesVerticalUno[selectVerticalUno]" alt="Descripción de la imagen">
+        <img class="imgs" [src]="imgesVerticalUno[selectVerticalUno]" alt="Perfil A" loading="lazy">
       </div>
       <!-- <strong style="font-size: 3vw;">Momentos</strong> -->
       <br>
     </div>
     <div class="col-md-4">
       <div class="contenedor" style="border-radius: 3rem;">
-        <img class="imgs" [src]="imgesVerticalDos[selectVerticalDos]" alt="Descripción de la imagen">
+        <img class="imgs" [src]="imgesVerticalDos[selectVerticalDos]" alt="Perfil B" loading="lazy">
       </div>
       <!-- <strong style="font-size: 3vw;">Agradables</strong> -->
       <br>
     </div>
     <div class="col-md-4">
       <div class="contenedor" style="border-radius: 3rem;">
-        <img class="imgs" [src]="imgesVerticalTres[selectVerticalTres]" alt="Descripción de la imagen">
+        <img class="imgs" [src]="imgesVerticalTres[selectVerticalTres]" alt="Perfil C" loading="lazy">
       </div>
       <!-- <strong style="font-size: 3vw;">Junto a ti</strong> -->
     </div>
@@ -143,7 +143,7 @@
     <div class="col-md-6">
       <!-- <div class="card">
           <div class="card-body"> -->
-      <img style="border-radius: 3rem;" [src]="imgesLugar[selectedImg]" alt="" height="400" width="100%">
+      <img style="border-radius: 3rem;" [src]="imgesLugar[selectedImg]" alt="Lugar" loading="lazy" height="400" width="100%">
       <!-- </div>
         </div> -->
     </div>
