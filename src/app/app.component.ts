@@ -11,6 +11,14 @@ export class AppComponent implements OnInit {
   isPlaying = false;
   imgesPortada:any = [
     'assets/img/portada2.jpg',
+    'assets/img/portada8.jpg',
+    'assets/img/portada9.jpg',
+    // 'assets/img/portada10.jpg',
+    // 'assets/img/portada11.jpg',
+    'assets/img/portada12.jpg',
+    // 'assets/img/portada13.jpg',
+    'assets/img/portada14.jpg',
+    // 'assets/img/portada15.jpg',
     'assets/img/portada4.jpg',
     'assets/img/portada.jpg',
     // 'assets/img/portada3.jpg',
@@ -50,10 +58,11 @@ export class AppComponent implements OnInit {
     'assets/img-lugar/uno.jpg',
     'assets/img-lugar/dos.jpg',
     'assets/img-lugar/tres.jpg',
-    'assets/img-lugar/cuatro.jpg',
+    // 'assets/img-lugar/cuatro.jpg',
   ];
   selectedImg:number = 0;
-  constructor() { }
+  constructor() {
+  }
   ngOnInit():void {
     this.portadaAleatorio();
     this.perfilA();
@@ -61,11 +70,12 @@ export class AppComponent implements OnInit {
     this.perfilC();
     this.lugarAleatorio();
     // setTimeout(() => {
-    // this.toggleMusic();
-    // }, 7000);
+    //     this.toggleMusic();
+    // }, 1000);
   }
   toggleMusic() {
     const audio = this.audioPlayer.nativeElement;
+    audio.pause();
     // console.log(audio);
     if (this.isPlaying) {
       audio.pause();

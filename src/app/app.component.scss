@@ -16,7 +16,8 @@
 .texto {
     position: absolute;
     // align-items: center;
-    top: 4%; /* Ajusta la posición vertical del texto en relación con la imagen */
+    // right: 75%; /* Ajusta la posición vertical del texto en relación con la imagen */
+    top: 85%;
     // left: 50%; /* Ajusta la posición horizontal del texto en relación con la imagen */
     // background-color: rgba(255, 255, 255, 0.7);
     // padding: 10px;
@@ -28,6 +29,12 @@
     // width: 100%; /* Ancho del contenedor */
     // height: 100vh; /* Altura del contenedor */
 }
+.imgTamano {
+  width: 80%; /* Ancho de la imagen al 100% del contenedor */
+  height: 90% !important; /* Altura de la imagen al 100% del contenedor */
+  object-fit: cover; /* Recorta la imagen para llenar el contenedor sin distorsionar */
+}
+
 .fuente {
     font-family: "Arial", sans-serif;
 }
@@ -72,7 +79,12 @@
   .imgs:hover {
     transform: scale(1.2);
 }
-
+.render {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimizeQuality;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
 /* Estilo para el botón flotante */
 .boton-flotante {
     position: fixed;
@@ -94,13 +106,14 @@
  }
  .letter {
     font-family: New Century Schoolbook, Times, serif;
+    font-style: italic;
  }
  .alingVerticalDos {
     text-align: center; /* Alineación horizontal al centro */
     display: flex; /* Uso de flexbox para alineación vertical */
     justify-content: center; /* Alineación vertical al centro */
     align-items: center; /* Alineación vertical al centro */
-    // height: 100vh; /* Altura del elemento al 100% de la ventana */
+    // height: 60vh; /* Altura del elemento al 100% de la ventana */
   }
   /* Estilo base para el icono */
 .mi-icono {
@@ -122,4 +135,10 @@
       transform: scale(1); /* Vuelve al tamaño normal */
     }
   }
-  
+//   .fondo {
+//     background-image: url('https://i.pinimg.com/originals/9f/a6/d3/9fa6d3028b22e01d32861facb1dc71ab.png'); /* Ruta de la imagen */
+//     // background-size: cover; /* Escalar la imagen para cubrir todo el fondo */
+//     background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+//     // background-attachment: fixed; /* Fijar la imagen de fondo */
+//     /* Otros estilos de fondo, como el color de fondo en caso de que la imagen no se cargue */
+//   }
