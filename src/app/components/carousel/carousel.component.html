@@ -1,0 +1,18 @@
+<ngb-carousel
+#carousel
+[pauseOnHover]="false"
+[pauseOnFocus]="false"
+(slide)="onSlide($event)"
+style="height: 100%"
+>
+<ng-template ngbSlide *ngFor="let img of imagenes; index as i">
+  <div class="picsum-img-wrapper button-container">
+    <img [src]="img" [alt]="img" loading="eager" style="width: 85%; height: 100%; border-radius: 3rem; object-fit: cover" />
+    <!-- <a
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      >saas
+    </a> -->
+  </div>
+</ng-template>
+</ngb-carousel>

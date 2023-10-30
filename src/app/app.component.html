@@ -1,22 +1,32 @@
 <!-- #032141 -->
-<div style="background: #323718; text-align: center; color: white; margin: 0px; padding: 0px; overflow-x: hidden;">
+<div style="background: rgb(40 47 2); text-align: center; color: white; margin: 0px; padding: 0px; overflow-x: hidden;">
 
-  <div class="contenedor" style="margin: 0px; padding: 0px;">
+  <div class="asigTextoImg">
+    <img class="heights" [src]="imgesPortada[selectPortada]" alt="Imagen de portada">
+    <strong class="letter">Raquel & Cristian</strong>
+  </div>
+  <!-- <div class="contenedor" style="margin: 0px; padding: 0px;">
     <img class="imagen" [src]="imgesPortada[selectPortada]" alt="Portada" loading="eager" width="100%">
-    <div class="texto" style="text-align: center; padding: 2vw; background-color: rgba(38, 36, 36, 0.4); border-radius: 2rem;">
-      <!-- <strong class="letter" style="font-size: 40px;">Nuestra boda</strong><br> -->
+    <div class="texto"
+      style="text-align: center; padding: 2vw; background-color: rgba(38, 36, 36, 0.4); border-radius: 2rem;">
       <strong class="letter" style="font-size: 25px;font-weight: bold; color: white">Raquel & Cristian</strong>
     </div>
-  </div>
+  </div> -->
   <br>
   <div>
-    <!-- <strong style="opacity: 100;">Nuestra canción</strong><br> -->
-    <!-- <audio src="assets/audio/encontre_un_amor.mp3" controls="controls"  preload="none" style="height: 30px;"></audio> -->
+    <button type="button" class="btn btn-sm btn-light" style="border-radius: 3rem; background: rgb(149, 88, 2); color: white;" (click)="toggleMusic()">
+      <span style="cursor: pointer;"
+      [class]="!isPlaying ? 'fa fa-play' : 'fa fa-pause'"></span>&nbsp; ~ Nuestra canción ~</button><br>
+
+      <audio #audioPlayer style="display: none;" autoplay>
+        <source src="assets/audio/amarte_por_mi_anos.mp3" type="audio/mpeg">
+      </audio>
+    <!-- <audio src="assets/audio/amarte_por_mi_anos.mp3" controls="controls" autoplay style="height: 35px;"></audio> -->
   </div>
   <!-- <div class="text-center letter">
     <strong style="font-size: 40px; color: rgb(171, 71, 5);">Nuestra boda</strong>
      -->
-    <!-- <br>
+  <!-- <br>
     <div class="text-center">
       <strong style="font-size: 30px; color: #f6734a;">2023</strong>
       <br>
@@ -30,14 +40,13 @@
   </div> -->
   <div class="row">
     <div class="col-md-4" style="display: flex; align-items: center;">
-      <img src="assets/img/flores_nuestra_boda.png" alt="" height="100%" loading="eager"
-        width="100%">
+      <img src="assets/img/miBoda2.png" alt="" height="100%" loading="eager" width="100%">
     </div>
     <div class="col-md-8" style="display: flex; align-items: center;">
-        <p style="font-size: 25px; padding-left: 20px; padding-right: 20px;" class="letter">
-          "El amor no conoce límites, ni el tiempo ni la distancia. Si es sincero, perdurará para siempre"
-          </p>
-      </div>
+      <p style="font-size: 20px; padding-left: 20px; padding-right: 20px; font-weight: bold;" class="letter">
+        "El amor no conoce límites, ni el tiempo ni la distancia. Si es sincero, perdurará para siempre"
+      </p>
+    </div>
   </div>
   <hr>
   <!-- <div class="text-center">
@@ -47,36 +56,74 @@
   <div class="row">
     <div class="col-md-4">
       <div>
+        <app-carousel [imagenes]="imgesVerticalUno"></app-carousel>
+        <br>
+        <div style="background-color: rgba(26, 24, 24, 0.4); padding-left: 20px; padding-right: 20px;">
+          <strong style="font-size: 16; text-align: justify;" class="letter">Nos conocimos el año 2015, ambos cursábamos
+            la carrera de Ingeniería de Sistemas y Enfermería, un año después decidimos iniciar una nueva etapa como
+            novios.</strong>
+        </div>
+        <br>
+      </div>
+
+      <!-- <div>
         <img [src]="imgesVerticalUno[selectVerticalUno]" alt="Perfil A" loading="eager" style="height: 400px; width: 85%; border-radius: 3rem;">
       </div>
+      <br>
+      ({{selectVerticalUno + 1}} / {{imgesVerticalUno.length}})
       <br>
       <div style="background-color: rgba(26, 24, 24, 0.4); padding-left: 20px; padding-right: 20px;">
         <strong style="font-size: 16; text-align: justify;" class="letter">Nos conocimos el año 2015, ambos cursábamos la carrera de Ingeniería de Sistemas y Enfermería, y un año después decidimos iniciar una nueva etapa como novios.</strong>
       </div>
-      <br>
+      <br> -->
     </div>
     <div class="col-md-4">
-      <!-- <div class="contenedor" style="border-radius: 3rem;">
-        <img class="imgs" [src]="imgesVerticalDos[selectVerticalDos]" alt="Perfil B" loading="lazy">
+      <div>
+        <app-carousel [imagenes]="imgesVerticalDos"></app-carousel>
+        <br>
+        <div style="background-color: rgba(26, 24, 24, 0.4); padding-left: 20px; padding-right: 20px;">
+          <strong style="font-size: 16; text-align: justify;" class="letter">Viajamos, trabajamos, crecimos
+            profesionalmente y vivimos hermosas experiencias juntos, cada día que pasaba se afianzaba más nuestra
+            relación.</strong>
+        </div>
+        <br>
+      </div>
+      <!-- <div>
+        <img [src]="imgesVerticalDos[selectVerticalDos]" alt="Perfil B" loading="eager"
+          style="height: 400px; width: 85%; border-radius: 3rem;">
+      </div>
+      <br>
+      ({{selectVerticalDos + 1}} / {{imgesVerticalDos.length}})
+      <br>
+      <div style="background-color: rgba(26, 24, 24, 0.4); padding-left: 20px; padding-right: 20px;">
+        <strong style="font-size: 16; text-align: justify;" class="letter">Viajamos, trabajamos, crecimos
+          profesionalmente y vivimos hermosas experiencias juntos, cada día que pasaba se afianzaba más nuestra
+          relación.</strong>
+      </div>
+      <br> -->
+    </div>
+    <div class="col-md-4">
+      <div>
+        <app-carousel [imagenes]="imgesVerticalTres"></app-carousel>
+        <br>
+        <div style="background-color: rgba(26, 24, 24, 0.4); padding-left: 20px; padding-right: 20px;">
+          <strong style="font-size: 16; text-align: justify;" class="letter">"Después de una hermosa relación de 7 años, lo imaginamos, lo
+            planeamos y hemos decidido tomar la mejor decisión"</strong>
+        </div>
+        <br>
+      </div>
+      <!-- <div>
+        <img [src]="imgesVerticalTres[selectVerticalTres]" alt="Perfil C" loading="eager"
+          style="height: 400px; width: 85%; border-radius: 3rem;">
+      </div>
+      <br>
+      ({{selectVerticalTres + 1}} / {{imgesVerticalTres.length}})
+      <br>
+      <div style="background-color: rgba(26, 24, 24, 0.4); padding-left: 20px; padding-right: 20px;">
+        <strong style="font-size: 16;" class="letter">"Después de una hermosa relación de 7 años, lo imaginamos, lo
+          planeamos y hemos decidido tomar la mejor decisión."</strong>
       </div> -->
-      <div>
-        <img [src]="imgesVerticalDos[selectVerticalDos]" alt="Perfil B" loading="eager" style="height: 400px; width: 85%; border-radius: 3rem;">
-      </div>
-      <br>
-      <div style="background-color: rgba(26, 24, 24, 0.4); padding-left: 20px; padding-right: 20px;">
-        <strong style="font-size: 16; text-align: justify;" class="letter">Viajamos, trabajamos, crecimos profesionalmente y vivimos hermosas experiencias juntos, cada día que pasaba se afianzaba más nuestra relación.</strong>
-      </div>
-      <br>
-    </div>
-    <div class="col-md-4">
-      <div>
-        <img [src]="imgesVerticalTres[selectVerticalTres]" alt="Perfil C" loading="eager" style="height: 400px; width: 85%; border-radius: 3rem;">
-      </div>
-      <br>
-      <div style="background-color: rgba(26, 24, 24, 0.4); padding-left: 20px; padding-right: 20px;">
-        <strong style="font-size: 16;" class="letter">"Después de una hermosa relación de 7 años, lo imaginamos, lo planeamos y hemos decidido tomar la mejor decisión."</strong>
-      </div>
-      
+
     </div>
   </div>
   <br>
@@ -120,7 +167,7 @@
 
           </div>
         </div>  -->
-      <br>
+        <br>
       </div>
       <div class="col-md-4">
         <!-- <img  class="render" style="object-fit: cover;"  src="assets/img/novia_padres.png" alt="" height="90%"
@@ -159,7 +206,7 @@
   <hr>
   <div class="row">
     <div class="col-md-8">
-      <strong style="font-size: 22px;" class="letter">Ceremonia y Recepción</strong>
+      <strong class="letter" style="font-size: 30px;">Ceremonia y Recepción</strong>
       <br>
       <hr>
       <p style="font-size: 16; padding-left: 20px; padding-right: 20px;" class="letter">
@@ -173,39 +220,48 @@
         <!-- Fecha: Domingo 10 de Diciembre del 2023<br> -->
       </p>
       <strong style="font-size: 16; padding-left: 20px; padding-right: 20px;" class="letter">
-        Lugar: Cerro Escalera, Tarapoto <br>
-        Ver mapa: 
-        <a  href="https://www.google.com/maps/dir/-11.9757152,-76.837499/mirador+escalera+hospedaje+tarapoto/@-10.0906406,-79.1534987,6.73z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x91ba09f075275997:0x60e2dd197c3cde2e!2m2!1d-76.3787312!2d-6.467605?hl=es&entry=ttu" target="_blank">Clic aquí</a>
+        Lugar: Mirador Escalera, Tarapoto <br>
+        Ver mapa:
+        <a href="https://www.google.com/maps/dir/-11.9757152,-76.837499/mirador+escalera+hospedaje+tarapoto/@-10.0906406,-79.1534987,6.73z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x91ba09f075275997:0x60e2dd197c3cde2e!2m2!1d-76.3787312!2d-6.467605?hl=es&entry=ttu"
+          target="_blank">Clic aquí</a>
       </strong>
     </div>
     <div class="col-md-4">
       <br><br>
       <!-- <div class="card">
           <div class="card-body"> -->
-      <img style="border-radius: 3rem; padding-right: 15px" [src]="imgesLugar[selectedImg]" alt="Lugar" loading="eager" height="230" width="100%" >
+      <img style="border-radius: 3rem; padding-right: 15px" [src]="imgesLugar[selectedImg]" alt="Lugar" loading="eager"
+        height="230" width="100%">
       <!-- </div>
         </div> -->
     </div>
   </div>
   <br>
   <hr>
-  <!-- <div class="text-center letter">
-    <strong style="font-size: 20px;">FECHA</strong>
+
+  <div class="text-center letter">
+    <strong class="letter" style="font-size: 30px;">Regalos</strong>
     <br>
     <div class="text-center">
-      <strong style="font-size: 25px; color: #f6734a;">Domingo 10 Diciembre</strong>
-      <br>
-      <strong style="font-size: 30px; color: #f6734a;">2023</strong>
-      <br>
-      <strong style="font-size: 30px; color: #f6734a;">TARAPOTO</strong>
+      <P style="font-size: 16; padding-left: 20px; padding-right: 20px;" class="letter">
+        Nuestro mejor regalo es que estés con nosotros en nuestro día, pero si deseas hacernos una contribución para nuestro hogar, ¡Aquí te dejamos
+        nuestro número de cuenta!
+      </P><br>
+      <div style="background-color: rgba(26, 24, 24, 0.4); padding-left: 20px; padding-right: 20px;">
+        <br>
+        <strong>Interbank CCI: 003-898-013275333192-46</strong><br><br>
+        <strong>Yape: 983835274 (Armando Cristian)</strong><br><br>
+        <strong>Plin: 983860847 (Ruth Raquel)</strong>
+        <br>
+        <br>
+      </div>
     </div>
-  </div> -->
+  </div>
+  <br>
+  <hr>
 </div>
-<!-- <audio id="audio" style="display: none;" src="assets/audio/encontre_un_amor.mp3"></audio> -->
-<audio #audioPlayer style="display: none;">
+<!-- <audio #audioPlayer style="display: none;">
   <source src="assets/audio/amarte_por_mi_anos.mp3" type="audio/mpeg">
 </audio>
-<!-- <button class="boton-flotante" style="padding: 10px;" > -->
 <span class="boton-flotante mi-icono" (click)="toggleMusic()" style="cursor: pointer; font-size: 30px; color: white;"
-  [class]="!isPlaying ? 'fa fa-play' : 'fa fa-pause'"></span>
-<!-- </button> -->
+  [class]="!isPlaying ? 'fa fa-play' : 'fa fa-pause'"></span> -->

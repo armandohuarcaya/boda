@@ -1,11 +1,11 @@
-import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'boda';
   @ViewChild('audioPlayer') audioPlayer:any = ElementRef;
   isPlaying = false;
@@ -27,9 +27,12 @@ export class AppComponent implements OnInit {
   ];
   selectPortada: number = 0;
   imgesVerticalUno:any = [
-    'assets/img/foto1a.jpg',
+    // 'assets/img/foto1a.jpg',
     'assets/img/foto1.jpg',
     'assets/img/foto1b.jpg',
+    'assets/img/foto1c.jpg',
+    'assets/img/foto1d.jpg',
+    'assets/img/foto1e.jpg',
   ];
   selectVerticalUno: number = 0;
   imgesVerticalDos:any = [
@@ -37,21 +40,29 @@ export class AppComponent implements OnInit {
     'assets/img/foto2a.jpg',
     'assets/img/foto2b.jpg',
     'assets/img/foto2d.jpg',
-    'assets/img/foto2e.jpg',
+    // 'assets/img/foto2e.jpg',
     'assets/img/foto2f.jpg',
   ];
   selectVerticalDos: number = 0;
   imgesVerticalTres:any = [
-    'assets/img/foto3a.jpg',
     'assets/img/foto3.jpg',
-    'assets/img/foto3b.jpg',
+    'assets/img/foto3a.jpg',
     'assets/img/foto3c.jpg',
-    'assets/img/foto3d.jpg',
-    'assets/img/foto3e.jpg',
+    // 'assets/img/foto3e.jpg',
     'assets/img/foto3f.jpg',
+    'assets/img/foto3d.jpg',
+    'assets/img/foto3b.jpg',
     'assets/img/foto3g.jpg',
-    'assets/img/foto3h.jpg',
-    'assets/img/foto3i.jpg',
+    // 'assets/img/foto3h.jpg',
+    // 'assets/img/foto3i.jpg',
+    'assets/img/foto3j.jpg',
+    // 'assets/img/foto3k.jpg',
+    // 'assets/img/foto3m.jpg',
+    // 'assets/img/foto3n.jpg',
+    // 'assets/img/foto3o.jpg',
+    'assets/img/foto3r.jpg',
+    'assets/img/foto3p.jpg',
+    // 'assets/img/foto3q.jpg',
   ];
   selectVerticalTres: number = 0;
   imgesLugar:any = [
@@ -61,13 +72,28 @@ export class AppComponent implements OnInit {
     // 'assets/img-lugar/cuatro.jpg',
   ];
   selectedImg:number = 0;
+
   constructor() {
+  }
+  ngAfterViewInit() {
+    this.audioPlayer.nativeElement.addEventListener('play', (a:any) => { // solo para sabes si esta en play
+      console.log(a)
+      this.isPlaying = true;
+    });
+
+    this.audioPlayer.nativeElement.addEventListener('ended', (a:any) => { // solo para sabes si finalizo el audio y volverlo a reproducir
+      console.log(a)
+      // this.isPlaying = false;
+      const audioElement = this.audioPlayer.nativeElement;
+      audioElement.currentTime = 0; // Volvemos al principio del audio
+      audioElement.play(); // Reproducimos el audio nuevamente
+    });
   }
   ngOnInit():void {
     this.portadaAleatorio();
-    this.perfilA();
-    this.perfilB();
-    this.perfilC();
+    // this.perfilA();
+    // this.perfilB();
+    // this.perfilC();
     this.lugarAleatorio();
     // setTimeout(() => {
     //     this.toggleMusic();
@@ -94,36 +120,36 @@ export class AppComponent implements OnInit {
       this.portadaAleatorio();
     }, 5000);
   }
-  perfilA() {
-    if (this.selectVerticalUno <= (this.imgesVerticalUno.length - 2)) {
-      this.selectVerticalUno = this.selectVerticalUno + 1;
-    } else {
-      this.selectVerticalUno = 0;
-    }
-    setTimeout(() => {
-      this.perfilA();
-    }, 8000);
-  }
-  perfilB() {
-    if (this.selectVerticalDos <= (this.imgesVerticalDos.length - 2)) {
-      this.selectVerticalDos = this.selectVerticalDos + 1;
-    } else {
-      this.selectVerticalDos = 0;
-    }
-    setTimeout(() => {
-      this.perfilB();
-    }, 8000);
-  }
-  perfilC() {
-    if (this.selectVerticalTres <= (this.imgesVerticalTres.length - 2)) {
-      this.selectVerticalTres = this.selectVerticalTres + 1;
-    } else {
-      this.selectVerticalTres = 0;
-    }
-    setTimeout(() => {
-      this.perfilC();
-    }, 8000);
-  }
+  // perfilA() {
+  //   if (this.selectVerticalUno <= (this.imgesVerticalUno.length - 2)) {
+  //     this.selectVerticalUno = this.selectVerticalUno + 1;
+  //   } else {
+  //     this.selectVerticalUno = 0;
+  //   }
+  //   setTimeout(() => {
+  //     this.perfilA();
+  //   }, 5000);
+  // }
+  // perfilB() {
+  //   if (this.selectVerticalDos <= (this.imgesVerticalDos.length - 2)) {
+  //     this.selectVerticalDos = this.selectVerticalDos + 1;
+  //   } else {
+  //     this.selectVerticalDos = 0;
+  //   }
+  //   setTimeout(() => {
+  //     this.perfilB();
+  //   }, 5000);
+  // }
+  // perfilC() {
+  //   if (this.selectVerticalTres <= (this.imgesVerticalTres.length - 2)) {
+  //     this.selectVerticalTres = this.selectVerticalTres + 1;
+  //   } else {
+  //     this.selectVerticalTres = 0;
+  //   }
+  //   setTimeout(() => {
+  //     this.perfilC();
+  //   }, 5000);
+  // }
   lugarAleatorio() {
     if (this.selectedImg <= (this.imgesLugar.length - 2)) {
       this.selectedImg = this.selectedImg + 1;
@@ -134,4 +160,5 @@ export class AppComponent implements OnInit {
       this.lugarAleatorio();
     }, 3000);
   }
+ 
 }

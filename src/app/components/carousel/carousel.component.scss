@@ -1,0 +1,13 @@
+.button-container {
+    position: relative;
+    height: inherit;
+  
+    & a {
+      position: absolute;
+      bottom: 15%;
+      left: 20%;
+    }
+  }
+//   .imgs:hover {
+//     transform: scale(1.2);
+// }
